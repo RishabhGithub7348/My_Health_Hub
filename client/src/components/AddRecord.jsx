@@ -40,7 +40,7 @@ const AddRecord = ({ visible, onClose }) => {
       },
     };
   
-    await axios.post('http://localhost:3001/api/add-record', formData, config);
+    await axios.post('https://my-health-hub-9wxa.onrender.com/api/add-record', formData, config);
   
       onClose();
     } catch (error) {

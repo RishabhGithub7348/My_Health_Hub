@@ -51,7 +51,7 @@ const Navbar = () => {
       
   
       try {
-        const response = await axios.post('http://localhost:3001/login', { email, password },
+        const response = await axios.post('https://my-health-hub-9wxa.onrender.com/login', { email, password },
         );
         const token = response.data.token;
         localStorage.setItem('token', token);
@@ -129,7 +129,7 @@ const Navbar = () => {
   
   const logout = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/logout');
+      const response = await axios.post('https://my-health-hub-9wxa.onrender.com/logout');
   
       // Check if the response data exists
       if (response && response.data) {

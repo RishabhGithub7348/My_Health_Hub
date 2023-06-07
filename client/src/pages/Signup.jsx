@@ -24,7 +24,7 @@ const Signup = () => {
 
   
       try {
-       const response =  await axios.post('http://localhost:3001/signup', { email, password });
+       const response =  await axios.post('https://my-health-hub-9wxa.onrender.com/signup', { email, password });
         const token = response.data.token;
         localStorage.setItem('token', token);
       

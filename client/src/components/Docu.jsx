@@ -12,7 +12,7 @@ const Docu = ({date, time, doctorName, treatment, note, file, tab, id}) => {
 
   const handleDownload = async (id) => { 
     try {
-      const response = await axios.get(`http://localhost:3001/recordfiledownload/${id}`, {
+      const response = await axios.get(`https://my-health-hub-9wxa.onrender.com/recordfiledownload/${id}`, {
         responseType: 'blob',
         headers: {
           Authorization: `Bearer ${token}`,

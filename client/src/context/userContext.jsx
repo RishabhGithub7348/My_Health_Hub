@@ -27,7 +27,7 @@ export function UserContextProvider({ children }) {
     
         const fetchUserDetails = async () => {
           try {
-            const response = await axios.get('http://localhost:3001/user', {
+            const response = await axios.get('https://my-health-hub-9wxa.onrender.com/user', {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
@@ -56,7 +56,7 @@ export function UserContextProvider({ children }) {
             },
           };
     
-          const response = await axios.get('http://localhost:3001/api/getFormDetails', config);
+          const response = await axios.get('https://my-health-hub-9wxa.onrender.com/api/getFormDetails', config);
     
           if (response.status === 200) {
             setFormDetails(response.data);
@@ -84,7 +84,7 @@ export function UserContextProvider({ children }) {
             Authorization: `Bearer ${token}`,
           },
         };
-        fetch('http://localhost:3001/api/notes', config)
+        fetch('https://my-health-hub-9wxa.onrender.com/api/notes', config)
           .then(response => response.json())
           .then(data => {
             // console.log('Success:', data);
@@ -107,7 +107,7 @@ export function UserContextProvider({ children }) {
             }
         async function fetchLatestNote() {
             
-          const response = await fetch('http://localhost:3001/api/latest', config);
+          const response = await fetch('https://my-health-hub-9wxa.onrender.com/api/latest', config);
           const data = await response.json();
           setLatestNote(data);
         }
@@ -121,7 +121,7 @@ export function UserContextProvider({ children }) {
                 Authorization: `Bearer ${token}`,
               },
             }
-        fetch('http://localhost:3001/files', config) 
+        fetch('https://my-health-hub-9wxa.onrender.com/files', config) 
           .then((response) => response.json())
           .then((data) => setFiles(data));
       }, [setFiles]);
@@ -134,7 +134,7 @@ export function UserContextProvider({ children }) {
           },
         }
         async function fetchRecords() {
-          const response = await fetch('http://localhost:3001/api/add-record',config);
+          const response = await fetch('https://my-health-hub-9wxa.onrender.com/api/add-record',config);
           const data = await response.json();
           setRecords(data);
           
@@ -158,7 +158,7 @@ export function UserContextProvider({ children }) {
         formData.append('file', file);
         setIsLoading(true);
         try {
-          const response = await axios.post('http://localhost:3001/upload', formData, config);
+          const response = await axios.post('https://my-health-hub-9wxa.onrender.com/upload', formData, config);
     
          
           setFileId(response.data.fileId);
@@ -175,7 +175,7 @@ export function UserContextProvider({ children }) {
 
       async function deleteFile(fileId) {
         try {
-          const response = await fetch(`http://localhost:3001/files/${fileId}`, {
+          const response = await fetch(`https://my-health-hub-9wxa.onrender.com/files/${fileId}`, {
             method: 'DELETE'
           });
       
@@ -189,7 +189,7 @@ export function UserContextProvider({ children }) {
 
       const handleDownloadButtonClick = async (id) => { 
         try {
-          const response = await axios.get(`http://localhost:3001/download/${id}`, {
+          const response = await axios.get(`https://my-health-hub-9wxa.onrender.com/download/${id}`, {
             responseType: 'blob',
           });
           const contentDisposition = response.headers['content-disposition'];
@@ -213,7 +213,7 @@ export function UserContextProvider({ children }) {
 
       const handleDownload = async (id) => { 
         try {
-          const response = await axios.get(`http://localhost:3001/recordfiledownload/${id}`, {
+          const response = await axios.get(`https://my-health-hub-9wxa.onrender.com/recordfiledownload/${id}`, {
             responseType: 'blob',
           });
       
@@ -238,7 +238,7 @@ export function UserContextProvider({ children }) {
 
       const handleDeleteNote = async (id) => {
         try {
-          const response = await fetch(`http://localhost:3001/api/notes/${id}`, {
+          const response = await fetch(`https://my-health-hub-9wxa.onrender.com/api/notes/${id}`, {
             method: 'DELETE'
           });
       
@@ -256,7 +256,7 @@ export function UserContextProvider({ children }) {
 
       const handleDeleteRecord = async (id) => {
         try {
-          const response = await fetch(`http://localhost:3001/api/delete-record/${id}`, {
+          const response = await fetch(`https://my-health-hub-9wxa.onrender.com/api/delete-record/${id}`, {
             method: 'DELETE'
           });
       

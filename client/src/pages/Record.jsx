@@ -31,7 +31,7 @@ const Record = () => {
   
   const handleSubmit = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/record-search', {
+      const response = await axios.get('https://my-health-hub-9wxa.onrender.com/api/record-search', {
         params: searchValues
       });
       setRecords(response.data);

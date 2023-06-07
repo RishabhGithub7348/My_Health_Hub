@@ -34,7 +34,7 @@ const Appointment = () => {
   
   const handleSubmit = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/appoinment-search', {
+      const response = await axios.get('https://my-health-hub-9wxa.onrender.com/api/appoinment-search', {
         params: searchValues
       });
       setNotes(response.data);
@@ -51,7 +51,7 @@ const Appointment = () => {
 
   const handleSaveNote = async (newNote) => {
     try {
-      const response = await fetch('http://localhost:3001/api/notes', {
+      const response = await fetch('https://my-health-hub-9wxa.onrender.com/api/notes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

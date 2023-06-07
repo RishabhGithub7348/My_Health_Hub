@@ -36,7 +36,7 @@ const AddNoteModal = ({ visible, onClose, onSave }) => {
       note,
     };
 
-    fetch('http://localhost:3001/api/notes', {
+    fetch('https://my-health-hub-9wxa.onrender.com/api/notes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

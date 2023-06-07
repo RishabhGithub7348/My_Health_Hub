@@ -44,7 +44,7 @@ const Form = () => {
       };
 
       const response = await axios.post(
-        'http://localhost:3001/api/submitForm',
+        'https://my-health-hub-9wxa.onrender.com/api/submitForm',
         payload,
         config
       );

@@ -15,7 +15,7 @@ const RecordDetail = ({date, time, doctorName, treatment, onDelete, onDownload, 
   const UpdateRecord = async (id) => { 
     try {
 
-      const response = await axios.get(`http://localhost:3001/api/add-record/${id}`);
+      const response = await axios.get(`https://my-health-hub-9wxa.onrender.com/api/add-record/${id}`);
       setUpdateRecord(response.data);
       setIsModalVisible(true);
     } catch (error) {

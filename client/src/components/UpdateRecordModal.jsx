@@ -11,7 +11,7 @@ import dayjs from 'dayjs';
 
 import axios from 'axios';
 
-const Url = 'http://localhost:3001';
+const Url = 'https://my-health-hub-9wxa.onrender.com';
 
 const UpdateRecordModal = ({ visible, onClose ,id, updaterecord}) => {
   const [updateRecord, setUpdateRecord] = useState(updaterecord);

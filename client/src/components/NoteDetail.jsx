@@ -20,7 +20,7 @@ const NoteDetail = ({date, time, doctorName, treatment,  note, id, onDelete}) =>
             Authorization: `Bearer ${token}`,
           },
         } 
-      const response = await axios.get(`http://localhost:3001/api/notes/${id}`, config);
+      const response = await axios.get(`https://my-health-hub-9wxa.onrender.com/api/notes/${id}`, config);
       setUpdateNote(response.data);
       setIsModalVisible(true);
     } catch (error) {
